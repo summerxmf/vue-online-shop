@@ -14,7 +14,7 @@
 
 </template>
 <script>
-	import {Swiper, SwiperSlide} from 'vue-awesome-swiper';
+	import {swiper, swiperSlide} from 'vue-awesome-swiper';
     import MeLoading from 'base/loading';
     import {PULL_DOWN_HEIGHT,
             PULL_DOWN_TEXT_INIT,
@@ -31,17 +31,18 @@
     name: 'MeScroll',
 
     components: {
-        Swiper,
-        SwiperSlide,
+    	swiper,
+    	swiperSlide,
         MeLoading
     },
     props:{
-        scrollbar: {
-            type: Boolean,
-            default: true
-        },
+    	scrollbar: {
+    		type: Boolean,
+    		default: true
+    	},
         data: {
             type: [Array, Object]
+
         },
         pullDown: {
             type: Boolean,
@@ -86,16 +87,15 @@
 
         },
         update(){
-            console.log(this.$refs.swiper);
-           this.$refs.swiper && this.$refs.swiper.$swiper.update();
+           this.$refs.swiper && this.$refs.swiper.update();
         },
 
         scrollToTop(speed, runCallback){
-            this.$refs.swiper && this.$refs.swiper.$swiper.slideTo(0, speed, runCallback);
+            this.$refs.swiper && this.$refs.swiper.swiper.slideTo(0, speed, runCallback);
         },
 
         scroll(){
-            const swiper = this.$refs.swiper.$swiper;
+            const swiper = this.$refs.swiper.swiper;
 
             this.$emit('scroll', swiper.translate, swiper);
 
@@ -132,7 +132,7 @@
                 return;
             }
 
-            const swiper = this.$refs.swiper.$swiper;
+            const swiper = this.$refs.swiper.swiper;
 
             if(swiper.translate >PULL_DOWN_HEIGHT ){ // 判断松手时translate是否超过100
                 if(!this.pullDown){
@@ -165,7 +165,7 @@
         },
         pullDownEnd() {
             this.pulling = false;
-            const swiper = this.$refs.swiper.$swiper;
+            const swiper = this.$refs.swiper.swiper;
 
             this.$refs.pullDownLoading.setText(PULL_DOWN_TEXT_END);
             swiper.params.virtualTranslate = false;
@@ -179,14 +179,14 @@
 
         pullUpEnd() {
             this.pulling = false;
-            const swiper = this.$refs.swiper.$swiper;
+            const swiper = this.$refs.swiper.swiper;
             this.$refs.pullUpLoading.setText(PULL_UP_TEXT_END);
             swiper.params.virtualTranslate = false;
             swiper.allowTouchMove = true;
         },
 
         scrollEnd(){
-            const swiper = this.$refs.swiper.$swiper;
+            const swiper = this.$refs.swiper.swiper;
             this.$emit('scroll-end', swiper.translate, swiper, this.pulling);
         }
 

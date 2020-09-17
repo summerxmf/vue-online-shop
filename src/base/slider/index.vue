@@ -5,11 +5,11 @@
 	</swiper>
 </template>
 <script>
-  import {Swiper} from 'vue-awesome-swiper';
+  import {swiper} from 'vue-awesome-swiper';
   export default{
     name: 'MeSlider',
     components: {
-      Swiper
+      swiper
     },
     props: {
       direction: {

@@ -23,7 +23,7 @@
 </template>
 <script>
   import MeSlider from 'base/slider';
-  import {SwiperSlide} from 'vue-awesome-swiper';
+  import {swiperSlide} from 'vue-awesome-swiper';
   import {sliderOptions} from './config';
   import {getHomeSlider} from 'api/home';
   import MeLoading from 'base/loading';
@@ -32,7 +32,7 @@
     name: 'HomeSlider',
     components: {
       MeSlider,
-      SwiperSlide,
+      swiperSlide,
       MeLoading
     },
 

@@ -1,5 +1,6 @@
 import Vue from 'vue';
 import Router from 'vue-router';
+import Home from 'pages/home';
 
 // import Home from 'pages/home';
 // import Category from 'pages/category';
@@ -14,36 +15,35 @@ const routes = [
   {
     name: 'home',
     path: '/home',
-    component: () => import('pages/home'),
+    component: Home,
     children: [
       {
         name: 'home-product',
         path: 'product/:id',
-        component: () => import('pages/product')
+        component: Home
       }
     ]
   },
   {
     name: 'category',
     path: '/category',
-    component: () => import('pages/category')
+    component: () => import('pages/category/index.vue')
   },
   {
     name: 'cart',
     path: '/cart',
-    component: () => import('pages/cart')
+    component: () => import('pages/cart/index.vue')
   },
   {
     name: 'personal',
     path: '/personal',
-    component: () => import('pages/personal')
+    component: () => import('pages/personal/index.vue')
   },
 
   {
     name: 'search',
     path: '/search',
-    component: () => import('pages/search') 
-  },
+    component: () => import('pages/search/index.vue') },
   {
     path: '*',
     redirect: '/home'

@@ -1,16 +1,17 @@
 <template>
   <div id="app" class="g-container">
-    <div class="g-view-container">
+  	<div class="g-view-container">
       <keep-alive>
         <router-view>
 
         </router-view>
-      </keep-alive>  		
+      </keep-alive>
+  		
 
-    </div>
-    <div class="g-footer-container">
+  	</div>
+  	<div class="g-footer-container">
       <c-tabbar/>
-    </div>
+  	</div>
   </div>
 </template>
 

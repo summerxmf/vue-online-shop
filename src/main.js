@@ -1,6 +1,6 @@
 // The Vue build version to load with the `import` command
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
-import '@babel/polyfill';
+import 'babel-polyfill';
 import Vue from 'vue';
 import App from './App';
 import router from './router';
@@ -8,7 +8,7 @@ import router from './router';
 import VueLazyload from 'vue-lazyload';
 
 import 'assets/scss/index.scss';
-import 'swiper/swiper-bundle.css';
+import 'swiper/dist/css/swiper.css';
 
 // fastclick.attach(document.body);
 
@@ -24,5 +24,6 @@ Vue.config.productionTip = false;
 new Vue({
   el: '#app',
   router,
-  render: h => h(App)
-})
+  components: { App },
+  template: '<App/>'
+});

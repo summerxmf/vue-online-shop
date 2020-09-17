@@ -32,8 +32,8 @@
     	}
     }, 
     watch: {
-    	text(newText) {
-    		this.loadingText = newText;
+    	text(value){
+    		this.loadingText = value;
     	}
     },
     methods: {
