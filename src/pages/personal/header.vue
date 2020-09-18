@@ -15,5 +15,22 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-// @import "~assets/scss/mixins";
+@import "~assets/scss/mixins";
+.g-header-container {
+  .header {
+    background-color: $header-bgc;
+    &-text {
+      padding-left: 49%;
+      color: #fff;
+      font-size: $font-size-l;
+    }
+    .iconfont {
+      color: $icon-color-default;
+      font-size: $icon-font-size;
+    }
+    .icon-msg {
+      margin-left: 10px;
+    }
+  }
+}
 </style>

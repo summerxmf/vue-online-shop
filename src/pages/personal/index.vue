@@ -6,6 +6,7 @@
     <div class="g-content-container">
       <me-scroll>
         <profile-banner />
+        <profile-assets />
       </me-scroll>
     </div>
   </div>
@@ -14,12 +15,14 @@
 import profileHeader from "./header";
 import MeScroll from "base/scroll";
 import ProfileBanner from "./banner";
+import ProfileAssets from "./assets";
 export default {
   name: "personal",
   components: {
     profileHeader,
     MeScroll,
-    ProfileBanner
+    ProfileBanner,
+    ProfileAssets
   }
 };
 </script>
