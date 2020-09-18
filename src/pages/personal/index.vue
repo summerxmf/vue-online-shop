@@ -1,10 +1,32 @@
 <template>
-	<div>
-		个人中心
-	</div>
+  <div class="personal">
+    <header class="g-header-container">
+      <profile-header />
+    </header>
+    <div class="g-content-container">
+      <me-scroll>
+        <profile-banner />
+      </me-scroll>
+    </div>
+  </div>
 </template>
 <script>
-  export default{
-    name: 'Personal'
-  };
+import profileHeader from "./header";
+import MeScroll from "base/scroll";
+import ProfileBanner from "./banner";
+export default {
+  name: "personal",
+  components: {
+    profileHeader,
+    MeScroll,
+    ProfileBanner
+  }
+};
 </script>
+<style lang="scss" scoped>
+.personal {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+</style>
